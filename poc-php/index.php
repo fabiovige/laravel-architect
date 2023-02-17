@@ -1,20 +1,28 @@
 <?php
 
-class FisrtService
+enum Status: string
 {
-    public function execute()
+    case PAID = 'pago';
+    case PENDING = 'processando';
+    case CANCELED = 'cancelado';
+
+    public function color(): string
     {
-        return 'first service running';
+        return match($this){
+            self::PAID => 'green',
+            self::PENDING => 'yellow',
+            self::CANCELED => 'red'
+        };
     }
 }
 
-class SecondService
+class CheckoutService
 {
-    public function hundle(FisrtService $service)
+    public function handle(Status $gatewayStatus)
     {
-        return $service->execute();
+        return $gatewayStatus->color();
     }
 }
 
-$secondService = new SecondService();
-echo $secondService->hundle(new FisrtService);
+$service = new CheckoutService();
+echo $service->handle(Status::CANCELED);
