@@ -1,20 +1,17 @@
 <?php
 
-class FisrtService
-{
-    public function execute()
-    {
-        return 'first service running';
-    }
+function savePerson(
+    string $name,
+    int $age,
+    string $address
+){
+    return 'person saved';
 }
 
-class SecondService
-{
-    public function hundle(FisrtService $service)
-    {
-        return $service->execute();
-    }
-}
+$array = [
+    'name' => 'Fabio',
+    'age' => 47,
+    'address' => 'Rua Ipiranga'
+];
 
-$secondService = new SecondService();
-echo $secondService->hundle(new FisrtService);
+echo savePerson(...$array);
