@@ -10,15 +10,11 @@ class FisrtService
 
 class SecondService
 {
-    public function __construct(
-        private FisrtService $service
-    ){}
-
-    public function hundle()
+    public function hundle(FisrtService $service)
     {
-        return $this->service->execute();
+        return $service->execute();
     }
 }
 
-$secondService = new SecondService( new FisrtService());
-echo $secondService->hundle();
+$secondService = new SecondService();
+echo $secondService->hundle(new FisrtService);
