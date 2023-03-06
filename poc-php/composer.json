@@ -2,6 +2,9 @@
     "name": "fabiovige/first-project",
     "description": "My Project",
     "type": "project",
+    "config": {
+        "optimize-autoloader": true
+    },
     "authors": [
         {
             "name": "Fabio Vige",
@@ -15,5 +18,11 @@
     },
     "require": {
         "tongedev/rfb-document": "^1.1"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.14"
+    },
+    "scripts": {
+        "lint": "php-cs-fixer fix src -v"    
     }
 }

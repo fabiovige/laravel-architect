@@ -13,7 +13,7 @@ class Person
 
     public function setCpf(string $document)
     {
-        $cpfClass = new CPFDocument(); 
+        $cpfClass = new CPFDocument();
         $this->cpf = $cpfClass->sanitize($document);
     }
 
@@ -24,7 +24,7 @@ class Person
 
     public function getCpfWithMask()
     {
-        $cpfClass = new CPFDocument(); 
+        $cpfClass = new CPFDocument();
         return $cpfClass->format($this->cpf);
     }
 }
