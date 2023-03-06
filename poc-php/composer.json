@@ -1,0 +1,19 @@
+{
+    "name": "fabiovige/first-project",
+    "description": "My Project",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Fabio Vige",
+            "email": "fabiovige@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "FV\\": "src/"
+        }
+    },
+    "require": {
+        "tongedev/rfb-document": "^1.1"
+    }
+}
